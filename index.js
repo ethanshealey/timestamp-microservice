@@ -10,6 +10,6 @@ app.get('/api/:date?', (req, res) => {
   return res.json({ 'unix': Math.floor(date.getTime() / 1000), 'utc': date.toGMTString() })
 })
 
-app.listen('3000', () => {
+app.listen(process.env.PORT, () => {
   console.log('listening on http://localhost:3000')
 })
