@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const enforce = require('express-sslify')
 
 app.use(enforce.HTTPS({ trustProtoHeader: true }))
 
