@@ -1,9 +1,6 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const enforce = require('express-sslify')
-
-app.use(enforce.HTTPS({ trustProtoHeader: true }))
 
 app.use(cors({optionSuccessStatus: 200}))
 
@@ -13,6 +10,6 @@ app.get('/api/:date?', (req, res) => {
   return res.json({ 'unix': Math.floor(date.getTime()), 'utc': date.toGMTString() })
 })
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`listening on http://localhost:${process.env.PORT || 3000}`)
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`listening on http://localhost:${process.env.PORT || 3001}`)
 })
